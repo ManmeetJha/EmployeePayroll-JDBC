@@ -28,9 +28,9 @@ public class EmployeePayrollService {
         int id = consoleInputReader.nextInt();
         System.out.println("Enter Employee Name: ");
         String name = consoleInputReader.next();
-        System.out.println("Enter Employee Salary: ");
-        Double salary = consoleInputReader.nextDouble();
-        employeePayrollList.add(new EmployeePayrollData(id, name, salary));
+        System.out.println("Enter Employee netPay: ");
+        Double netPay = consoleInputReader.nextDouble();
+        employeePayrollList.add(new EmployeePayrollData(id, name, netPay));
     }
 
     public void writeEmployeePayrollData(IOService ioService) {
