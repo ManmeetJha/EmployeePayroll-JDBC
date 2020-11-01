@@ -4,17 +4,17 @@ import java.util.*;
 
 public class EmployeePayrollDBService {
     public List<EmployeePayrollData> readData() {
-        String sql = "SELECT * FROM employee_payroll;";
+        String sql = "SELECT * FROM employee_payroll";
         List<EmployeePayrollData> employeePayrollList = new ArrayList<EmployeePayrollData>();
         try(Connection connection = this.getConnection();) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while(resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String name = resultSet.getString("name");
-                double salary = resultSet.getDouble("salary");
-                LocalDate startDate = resultSet.getDate("start").toLocalDate();
-                employeePayrollList.add(new EmployeePayrollData(id, name, salary,startDate));
+                int id = resultSet.getInt("ID");
+                String name = resultSet.getString("NAME");
+                double netPay = resultSet.getDouble("netPay");
+                LocalDate startDate = resultSet.getDate("START_DATE").toLocalDate();
+                employeePayrollList.add(new EmployeePayrollData(id, name, netPay,startDate));
             }
         } catch (SQLException e) {
             e.printStackTrace();
