@@ -31,4 +31,12 @@ public class EmployeePayrollData {
         EmployeePayrollData that = (EmployeePayrollData) o;
         return id == that.id && Double.compare(that.netpay,netpay) == 0 && name.equals(that.name);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
